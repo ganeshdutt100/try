@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background: linear-gradient(to right, #780206, #061161);
+            font-family: sans-serif;
+        }
+
+        .main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0px;
+    border: 1px solid black;
+    margin: 50px 0px;
+    border-radius: 20px;
+    background-color: rgba(240, 248, 255, 0.358);
+  }
+  .pera{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+
+  }
+  input{
+    padding: 10px 0px;
+    /* width: 100px; */
+    margin: 0 48px;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+  }
+  button{
+    margin: 0 83px;
+    padding: 10px 0;
+    color: white;
+    background: radial-gradient(black, transparent);
+    border-radius: 10px;
+  }
+  #result{
+   text-align: center;
+   color: white;
+   font-size: 25px;
+   
+  }
+
+
+        @media screen and (min-width: 500px) {
+            button{
+    margin: 0 130px;
+    padding: 10px 0;
+   
+
+    input{
+    padding: 10px 0px;
+    /* width: 100px; */
+    margin: 0 84px;
+    
+  }
+  }
+
+  .main{
+    padding: 20px 0px;
+    border: 1px solid black;
+    margin: 50px 84px;
+   
+  }
+        
+        }
+
+        @media screen and (min-width: 800px) {
+            button{
+    margin: 0 130px;
+    padding: 10px 0;
+   
+
+    input{
+    padding: 10px 0px;
+    /* width: 100px; */
+    margin: 0 134px;
+    
+  }
+  }
+
+  .main{
+    padding: 20px 0px;
+    border: 1px solid black;
+    margin: 50px 184px;
+   
+  }
+        
+        }
+        @media screen and (min-width: 1108px) {
+            
+        
+  .main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 100px;
+    border: 1px solid black;
+    margin: 100px 300px;
+    border-radius: 20px;
+    background-color: rgba(240, 248, 255, 0.358);
+  }
+  .pera{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+
+  }
+  input{
+    padding: 10px 81px;
+    /* width: 100px; */
+    margin: 0 48px;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+  }
+  button{
+    margin: 0 143px;
+    padding: 10px 0;
+    color: white;
+    background: radial-gradient(black, transparent);
+    border-radius: 10px;
+  }
+  #result{
+   text-align: center;
+   color: white;
+   font-size: 25px;
+   
+  }
+}
+    </style>
+</head>
+<body>
+ 
+    <div class="main">
+    <p class="pera">This is your percentage calculator </p>
+    <input type="text" placeholder="Enter your Hindi marks" id="hindi"> <br>
+    <input type="text" placeholder="Enter your Math marks" id="math"> <br>
+    <input type="text" placeholder="Enter your English marks" id="eng"> <br>
+    <div id="pera" class="pera"> Loading your Total : .......</div> <br>
+    <div id="result"> Loading your result : .......</div> <br>
+    
+    <button id="btn" onclick="calculate()">Click me</button>
+</div>
+
+    <script>
+    function calculate() {
+        let hindi = parseFloat(document.getElementById('hindi').value);
+        let math = parseFloat(document.getElementById('math').value);
+        let eng = parseFloat(document.getElementById('eng').value);
+        if(hindi > 100 || eng > 100 || math>100) {
+            alert("your type wrong and check value ")
+        }
+        else{
+
+       
+        let cal =  hindi + math + eng;
+        let total  = (cal/300)*100;
+        document.getElementById('pera').innerHTML = "This is your result: " + cal ;
+        document.getElementById('result').innerHTML = "This is your result: " + total + "%";
+    } 
+}
+    </script>
+    
+    </script>
+</body>
+</html>
